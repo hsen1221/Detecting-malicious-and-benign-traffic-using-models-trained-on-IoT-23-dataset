@@ -1,1 +1,1 @@
-# Detecting-malicious-and-benign-connections-using-IoT-23 dataset
+# Detecting-malicious-and-benign-traffic-using models trained on IoT-23 dataset
