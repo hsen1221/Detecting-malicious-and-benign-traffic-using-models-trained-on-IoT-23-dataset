@@ -32,3 +32,5 @@ Actually, in the second process we cleaned each dataset alone and produced a cle
 ## 4 Training Models
 Thif folder contain 4 models trained on the 'combined_daataset,csv' dataset.
 for each model there is the code that corresponds to the training and testing the model and the final model after training.
+the models are Lightgbm, XGBoost, Random_forest, neural_network.
+and there is a code 'dataset_observation.ipynb' to observe the data used in training and see its properties
