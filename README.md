@@ -20,3 +20,8 @@ we drop the unnecessary features and misleading features:{
 'id.resp_h':the ip address of the responder host and it is defferentiable,
 'id.orig_p': the port number of the originator,
 'history': it's unnecessary since connection_state feature is there}
+
+and we converted the {'duration', 'orig_bytes', 'resp_bytes'} features to float type because they are numeric features not object features,
+and deal with nan values of the {'duration', 'orig_bytes', 'resp_bytes'} features as the following:
+when connection_state=o (S0 which means a connection attempt but there is no reply) and there are nan values we fill 0s in their places
+and when connection_state!=0 we filled the median of the column in the place of nan values
