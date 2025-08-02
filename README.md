@@ -34,3 +34,8 @@ Thif folder contain 4 models trained on the 'combined_daataset,csv' dataset.
 for each model there is the code that corresponds to the training and testing the model and the final model after training.
 the models are Lightgbm, XGBoost, Random_forest, neural_network.
 and there is a code 'dataset_observation.ipynb' to observe the data used in training and see its properties
+
+## 5 Attack Simulation
+we opened 2 ubuntu virtual machines one for attacking and the other for detection, so in the detection machine we run the iot_detection.zeek to capture and analyze the traffic from the attacking machine
+and predict.py predict the traffic captured by iot_detection.zeek using a loaded trained model
+and dashboard.py see the predictions and show them in a nice way
