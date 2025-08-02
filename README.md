@@ -29,3 +29,6 @@ and when connection_state!=0 we filled the median of the column in the place of 
 ## 3 Combining datasets
 Actually, in the second process we cleaned each dataset alone and produced a cleaned dataset from it, so now in thsi code we combine these all cleaned datasets to a one full dataset named as 'combined_dataset.csv' to use it for training and testing the models
 
+## 4 Training Models
+Thif folder contain 4 models trained on the 'combined_daataset,csv' dataset.
+for each model there is the code that corresponds to the training and testing the model and the final model after training.
