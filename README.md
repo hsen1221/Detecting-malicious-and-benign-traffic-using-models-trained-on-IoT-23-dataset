@@ -25,3 +25,7 @@ and we converted the {'duration', 'orig_bytes', 'resp_bytes'} features to float 
 and deal with nan values of the {'duration', 'orig_bytes', 'resp_bytes'} features as the following:
 when connection_state=o (S0 which means a connection attempt but there is no reply) and there are nan values we fill 0s in their places
 and when connection_state!=0 we filled the median of the column in the place of nan values
+
+## 3 Combining datasets
+Actually, in the second process we cleaned each dataset alone and produced a cleaned dataset from it, so now in thsi code we combine these all cleaned datasets to a one full dataset named as 'combined_dataset.csv' to use it for training and testing the models
+
