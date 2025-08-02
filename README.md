@@ -6,3 +6,17 @@ Actually the IOT-23 is not a ready dataset to train and use, indeed there are mu
 CTU-IoT-Malware-Capture-1-1, CTU-IoT-Malware-Capture-3-1, CTU-IoT-Malware-Capture-4-1, CTU-IoT-Malware-Capture-5-1, CTU-IoT-Malware-Capture-7-1, CTU-IoT-Malware-Capture-8-1, CTU-IoT-Malware-Capture-9-1, CTU-IoT-Malware-Capture-20-1, CTU-IoT-Malware-Capture-21-1, CTU-IoT-Malware-Capture-34-1, CTU-IoT-Malware-Capture-35-1, CTU-part of IoT-Malware-Capture-36-1, CTU-IoT-Malware-Capture-42-1, CTU-IoT-Malware-Capture-44-1, CTU-IoT-Malware-Capture-49-1, CTU-IoT-Malware-Capture-60-1
 and in the Extracting datasets folder we read the conn.log.labeled files and exrtact datasets from them to .csv format which is good for training.
 
+## 2 Cleaning Datasets
+After we extract the dataset, now we need to clean it and drop unnecessary features and handle the missing values and encodeing the labels and the features
+so the most important thing is that we transformed the problem to binary classification: '0' for Benign, and '1' for Malicious 
+we dropped the rows that have nan values in their Labels (ie. we don't know the label of this row so dropping it is necessary)
+we drop the unnecessary features and misleading features:{
+'Unnamed: 0': which counts the roes in the dataset,
+'ts':TimeStamp,
+'uid': Unique identifier for the connection,
+'local_orig': local_originator and we drop it because it is an empty column, 
+'local_resp': local_response and we drop it because it is an empty column,
+'id.orig_h': the ip address of the originator host and it is defferentiable,
+'id.resp_h':the ip address of the responder host and it is defferentiable,
+'id.orig_p': the port number of the originator,
+'history': it's unnecessary since connection_state feature is there}
