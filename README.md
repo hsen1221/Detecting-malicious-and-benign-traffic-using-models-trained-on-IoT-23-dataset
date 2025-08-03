@@ -6,6 +6,10 @@ Actually the IOT-23 is not a ready dataset to train and use, indeed there are mu
 CTU-IoT-Malware-Capture-1-1, CTU-IoT-Malware-Capture-3-1, CTU-IoT-Malware-Capture-4-1, CTU-IoT-Malware-Capture-5-1, CTU-IoT-Malware-Capture-7-1, CTU-IoT-Malware-Capture-8-1, CTU-IoT-Malware-Capture-9-1, CTU-IoT-Malware-Capture-20-1, CTU-IoT-Malware-Capture-21-1, CTU-IoT-Malware-Capture-34-1, CTU-IoT-Malware-Capture-35-1, CTU-part of IoT-Malware-Capture-36-1, CTU-IoT-Malware-Capture-42-1, CTU-IoT-Malware-Capture-44-1, CTU-IoT-Malware-Capture-49-1, CTU-IoT-Malware-Capture-60-1
 and in the Extracting datasets folder we read the conn.log.labeled files and exrtact datasets from them to .csv format which is good for training.
 
+### how to run the code
+first you must have the conn.log.labeled files downloaded locally and putted in a directory where the code files exist and rename them as the names in the codes, then you can open Jupyter notebook using Anaconda and open the code files and for each file run all cells by shift+enter then you will extract the dataset from the conn.log.labeles files
+and thus you will have the datasets named as 'x.csv' where x is a number correspond to the number of the capture
+
 ## 2 Cleaning Datasets
 After we extract the dataset, now we need to clean it and drop unnecessary features and handle the missing values and encodeing the labels and the features
 so the most important thing is that we transformed the problem to binary classification: '0' for Benign, and '1' for Malicious 
