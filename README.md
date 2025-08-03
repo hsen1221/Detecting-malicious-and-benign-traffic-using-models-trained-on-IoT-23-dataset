@@ -77,3 +77,20 @@ these are what neceessary for the code to work successfully but ofcourse you mus
 we opened 2 ubuntu virtual machines one for attacking and the other for detection, so in the detection machine we run the iot_detection.zeek to capture and analyze the traffic from the attacking machine
 and predict.py predict the traffic captured by iot_detection.zeek using a loaded trained model
 and dashboard.py see the predictions and show them in a nice way
+
+### how to run the code
+first you have to create 2 virtual machines and install zeek and required libraries then:
+on Detection machine run the following:
+terminal 1:sudo /opt/zeek/bin/zeek -i ens33 scripts/iot_detection.zeek
+terminal 2:python3 scripts/predict.py
+terminal 3:hussein@hsen:~/Desktop/iot-security$ tail -f io_t_detection.log > /tmp/zeek_pipe
+terminal 4: python3 scripts/predict.py | python3 scripts/dashboard.py 
+
+on attacking machine run the following:
+terminal: sudo nmap -sS -p 80 192.168.1.1-254 -n
+
+### Requrired Libraries
+
+these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space and enough RAM and enough battery charge if you trained locally.
+
+
