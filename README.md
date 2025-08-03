@@ -90,7 +90,8 @@ on attacking machine run the following:
 terminal: sudo nmap -sS -p 80 192.168.1.1-254 -n
 
 ### Requrired Libraries
+sys, json, time, os, numpy
 
-these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space and enough RAM and enough battery charge if you trained locally.
+these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space to create the 2 machines and enough RAM.
 
 
