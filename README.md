@@ -10,6 +10,11 @@ and in the Extracting datasets folder we read the conn.log.labeled files and exr
 first you must have the conn.log.labeled files downloaded locally and putted in a directory where the code files exist and rename them as the names in the codes, then you can open Jupyter notebook using Anaconda and open the code files and for each file run all cells by shift+enter then you will extract the dataset from the conn.log.labeles files
 and thus you will have the datasets named as 'x.csv' where x is a number correspond to the number of the capture
 
+### Requrired Libraries
+numpy and pandas 
+
+these are what neceessary  for the code to work successfully but ofcoursy you must also have enough free disk space and RAM for 12GB or more.
+
 ## 2 Cleaning Datasets
 After we extract the dataset, now we need to clean it and drop unnecessary features and handle the missing values and encodeing the labels and the features
 so the most important thing is that we transformed the problem to binary classification: '0' for Benign, and '1' for Malicious 
@@ -30,14 +35,43 @@ and deal with nan values of the {'duration', 'orig_bytes', 'resp_bytes'} feature
 when connection_state=o (S0 which means a connection attempt but there is no reply) and there are nan values we fill 0s in their places
 and when connection_state!=0 we filled the median of the column in the place of nan values
 
+
+### how to run the code
+first you must have the dataset 'x.csv' files exist in the directory where the code files ,then you can open Jupyter notebook using Anaconda and open the code files and for each file run all cells by shift+enter to read the 'x.csv' dataset and clean it and then produce a cleaned dataset named as 'xcleaned.csv' where x corresponds to 'x.csv' 
+### Requrired Libraries
+numpy and pandas 
+
+these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space and RAM for 12GB or more.
+
+
 ## 3 Combining datasets
 Actually, in the second process we cleaned each dataset alone and produced a cleaned dataset from it, so now in thsi code we combine these all cleaned datasets to a one full dataset named as 'combined_dataset.csv' to use it for training and testing the models
+
+### how to run the code
+first you must have the dataset 'xcleaned.csv' files exist in the directory where the code files and only them in the .csv format ,then you can open Jupyter notebook using Anaconda and open the code file and run the cell by shift+enter 
+
+### Requrired Libraries
+pandas , os, glob
+
+these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space and enough RAM.
+
 
 ## 4 Training Models
 Thif folder contain 4 models trained on the 'combined_daataset,csv' dataset.
 for each model there is the code that corresponds to the training and testing the model and the final model after training.
 the models are Lightgbm, XGBoost, Random_forest, neural_network.
 and there is a code 'dataset_observation.ipynb' to observe the data used in training and see its properties
+
+### how to run the code
+first you must have the dataset 'combined_dataaset.csv' files exist in the directory where the code files  ,then you can open Jupyter notebook using Anaconda and open the code file and run the cell by shift+enter 
+or you can upload the dataset to Google Drive or to Colab directly to use it in training and testing.
+
+### Requrired Libraries
+pandas, numpy, lightgbm, matplotlib.pyplot, seaborn, and parts from {sklearn.model_selection, sklearn.preprocessing, sklearn.metrics, sklearn.ensemble, xgboost
+joblib, torch, sklearn.preprocessing
+
+these are what neceessary for the code to work successfully but ofcourse you must also have enough free disk space and enough RAM and enough battery charge if you trained locally.
+
 
 ## 5 Attack Simulation
 we opened 2 ubuntu virtual machines one for attacking and the other for detection, so in the detection machine we run the iot_detection.zeek to capture and analyze the traffic from the attacking machine
